@@ -12,14 +12,9 @@ Minimum resolved fiber spacing is 2 voxels.
 
 3. ARTIFACT REMOVAL: Morphological Closing -- dilation followed by erosion (width 1).
 
-4. MEDIAL AXIS COMPUTATION: Distance-ordered homotopic thinning 
+4. EUCLIDEAN DISTANCE MAP OF THE FLUID PHASE
 
-5. EUCLIDEAN DISTANCE MAP OF THE FLUID PHASE
+5. COVERING RADIUS TRANSFORM (CRT)
 
-6. COVERING RADIUS TRANSFORM (CRT)
+6. PORE SIZE DISTRIBUTION is the histogram of values of the CRT
 
-7. PORE SIZE DISTRIBUTION is the histogram of values of the CRT
-
-(8. SECONDARY PORE SIZE DISTRIBUTION)
-
-(9. MEDIAL AXIS PERCOLATION THRESHOLD)
