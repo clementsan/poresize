@@ -9,16 +9,13 @@ if (ITK_FOUND)
 endif(ITK_FOUND)
 
 add_executable(porosity porosity.cxx)
- 
-target_link_libraries(porosity
-	${ITK_LIBRARIES})
+target_link_libraries(porosity ${ITK_LIBRARIES})
+install( TARGETS porosity RUNTIME DESTINATION bin )
 
 add_executable(coveringradius coveringradius.cxx)
- 
-target_link_libraries(coveringradius
-	${ITK_LIBRARIES})
+target_link_libraries(coveringradius ${ITK_LIBRARIES})
+install( TARGETS coveringradius RUNTIME DESTINATION bin )
 
 add_executable(histogram histogram.cxx)
- 
-target_link_libraries(histogram
-	${ITK_LIBRARIES})
+target_link_libraries(histogram ${ITK_LIBRARIES})
+install( TARGETS histogram RUNTIME DESTINATION bin )
