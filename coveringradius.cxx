@@ -22,7 +22,7 @@ int main (int argc, char *argv[])
 
   if (argc < 4)
     {
-      std::cout << "Usage:" << argv[0] 
+      std::cout << "Usage: " << argv[0] 
       	<< " distance_transform phase_model phase output_file" << std::endl;
 
       std::cout << "REQUIRED PARAMETERS" << std::endl;

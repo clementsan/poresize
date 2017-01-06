@@ -24,7 +24,7 @@ int main (int argc, char *argv[])
 
   if (argc < 4)
     {
-      std::cout << "Usage:" << argv[0] 
+      std::cout << "Usage: " << argv[0] 
       	<< " phase_model phase output_file neighborhood_radius" << std::endl;
 
       std::cout << "REQUIRED PARAMETERS" << std::endl;
