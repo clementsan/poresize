@@ -25,7 +25,7 @@ int main (int argc, char *argv[])
   if (argc < 4)
     {
       std::cout << "Usage:" << argv[0] 
-      	<< "phase_model phase neighborhood_radius output_file" << std::endl;
+      	<< " phase_model phase output_file neighborhood_radius" << std::endl;
 
       std::cout << "REQUIRED PARAMETERS" << std::endl;
       std::cout << "phase_model = The image file containing the phase model, where 0 represents fluid phase and 1 represents the collagen phase." << std::endl;
@@ -62,7 +62,7 @@ int main (int argc, char *argv[])
     unsigned int phase = static_cast<unsigned int>(atoi(argv[2]));
     std::cout << "#  Computing porosity for phase label " << phase << std::endl;
 
-    unsigned int nsize = static_cast<unsigned int>(atoi(argv[3]));
+    unsigned int nsize = static_cast<unsigned int>(atoi(argv[4]));
     std::cout << "#  Using neighborhood radius of " << nsize << std::endl;
 
     if (nsize < 1)
@@ -139,11 +139,11 @@ int main (int argc, char *argv[])
     
     
     // Write porosity file
-    std::cout << "#  Writing output to \"" << argv[4] << "\" ...";
+    std::cout << "#  Writing output to \"" << argv[3] << "\" ...";
     std::cout.flush();
     itk::ImageFileWriter<output_image_type>::Pointer dtWriter
       = itk::ImageFileWriter<output_image_type>::New();
-    dtWriter->SetFileName(argv[4]);
+    dtWriter->SetFileName(argv[3]);
     dtWriter->SetInput(outImg);
     dtWriter->UpdateLargestPossibleRegion();
     std::cout << " done!" << std::endl;
@@ -151,7 +151,7 @@ int main (int argc, char *argv[])
     // Global porosity
     
     float p = static_cast<float>(globalCount) / static_cast<float>(total);
-    std::cout << "Global porosity value is " << p << std::endl;
+    std::cout << "Global porosity value is " << std::setprecision(4) << p << std::endl;
     
   }
   catch (itk::ExceptionObject &e)
