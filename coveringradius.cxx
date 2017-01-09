@@ -225,7 +225,7 @@ int main (int argc, char *argv[])
                           {
                             float z = static_cast<float>(off[2] - idx[2]);
                             
-                            float dist = sqrt(x2+y2+z*z);
+                            float dist = sqrt(x2+y2+z*z) * spX;
                             
                             // Ignore neighbors not in the sphere of radius d or with
                             // voxel values greater than V
