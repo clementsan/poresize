@@ -150,10 +150,10 @@ int main (int argc, char *argv[])
         throw (itk::ExceptionObject("Couldn't open csv file for output"));
       }
     
-    ofs << "Bin Number,Bin Range,Count,Percent"<< std::endl;
+    ofs << "BinNumber,BinRangeMin,BinRangeMax,Count,Percent"<< std::endl;
     for (unsigned int i = 0; i < numbins; i++)
       {
-        ofs << i << "," << binsMin[i] << " - " << binsMax[i] << ","
+        ofs << i+1 << "," << binsMin[i] << "," << binsMax[i] << ","
             << poreHisto[i] << "," << porePercent[i] << std::endl;
       }
 
